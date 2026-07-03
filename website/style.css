@@ -258,37 +258,6 @@ section { padding: 84px 0; }
 .learn-item h3 { font-size: 1rem; margin-bottom: 6px; }
 .learn-item p { font-size: 0.88rem; color: #6b5a56; margin: 0; }
 
-/* ---------- author ---------- */
-.author { background: linear-gradient(160deg, #FBF0EC 0%, #F3E7F2 100%); }
-.author .wrap {
-  display: grid;
-  grid-template-columns: 180px 1fr 300px;
-  gap: 44px;
-  align-items: center;
-}
-.author-badge {
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: var(--cream);
-  border: 3px solid var(--gold);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  color: var(--rose-deep);
-  margin: 0 auto;
-}
-.author h2 { font-size: 1.6rem; margin-bottom: 8px; color: var(--purple); }
-.author-quote {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.35rem;
-  color: var(--rose-deep);
-  border-left: 2px solid var(--gold);
-  padding-left: 20px;
-}
-.author-quote .quote-mark { display: block; font-size: 2.2rem; color: var(--gold); line-height: 0.6; margin-bottom: 8px; }
-.author-quote .heart { color: var(--gold); margin-top: 10px; display: block; }
-
 /* ---------- cta banner ---------- */
 .cta-banner {
   background: linear-gradient(120deg, var(--lavender-deep) 0%, var(--rose) 100%);
@@ -352,8 +321,6 @@ footer .wrap { display: flex; align-items: center; justify-content: space-betwee
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .learn-grid { grid-template-columns: repeat(2, 1fr); }
-  .author .wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-  .author-quote { border-left: none; border-top: 2px solid var(--gold); padding-left: 0; padding-top: 16px; }
 }
 @media (max-width: 760px) {
   .nav-links { display: none; }
