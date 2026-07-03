@@ -115,6 +115,18 @@ def footer_pageno(c, page_num):
 
 # --------------------------------------------------------- page templates --
 
+COVER_IMG = os.path.join(HERE, "build", "pdf-cover-page.jpg")
+BACKCOVER_IMG = os.path.join(HERE, "build", "pdf-back-page.jpg")
+
+
+def on_cover(c, doc):
+    c.drawImage(COVER_IMG, 0, 0, width=PAGE_W, height=PAGE_H)
+
+
+def on_backcover(c, doc):
+    c.drawImage(BACKCOVER_IMG, 0, 0, width=PAGE_W, height=PAGE_H)
+
+
 def on_title(c, doc):
     bg(c)
     gold_heart(c, PAGE_W / 2, PAGE_H - 108, 24)
@@ -164,7 +176,7 @@ def on_quickref(c, doc):
     footer_pageno(c, STATE_PAGE_NO(c))
 
 
-FRONT_PAGES = 2  # title + copyright, unnumbered
+FRONT_PAGES = 3  # cover + title + copyright, unnumbered
 
 
 def STATE_PAGE_NO(c):
@@ -303,6 +315,11 @@ def build_title_and_copyright(story):
             byline_txt = s.strip("*")
         elif s.startswith("*") and s.endswith("*"):
             tagline_txt = s.strip("*")
+
+    # image cover page first, then flow onto the interior title page
+    story.append(Spacer(1, 1))  # cover page carries only the background image
+    story.append(NextPageTemplate("title"))
+    story.append(PageBreak())
 
     story.append(Spacer(1, 92))
     story.append(Paragraph(inline(title_txt), title_main))
@@ -502,12 +519,14 @@ def make_doc(target):
         return Frame(SIDE, bottom, PAGE_W - 2 * SIDE, PAGE_H - top - bottom, id="f")
 
     doc.addPageTemplates([
+        PageTemplate(id="cover", frames=[frame(TITLE_TOP, TITLE_BOTTOM)], onPage=on_cover),
         PageTemplate(id="title", frames=[frame(TITLE_TOP, TITLE_BOTTOM)], onPage=on_title),
         PageTemplate(id="copyright", frames=[frame(90, 70)], onPage=on_copyright),
         PageTemplate(id="chapter_open", frames=[frame(OPEN_TOP, OPEN_BOTTOM)], onPage=on_chapter_open),
         PageTemplate(id="body", frames=[frame(BODY_TOP, BODY_BOTTOM)], onPage=on_body),
         PageTemplate(id="quickref", frames=[frame(30, BODY_BOTTOM)], onPage=on_quickref),
         PageTemplate(id="closing", frames=[frame(160, 90)], onPage=on_closing),
+        PageTemplate(id="backcover", frames=[frame(TITLE_TOP, TITLE_BOTTOM)], onPage=on_backcover),
     ])
     return doc
 
@@ -519,6 +538,10 @@ def assemble_story():
     build_chapters(story)
     build_quickref(story)
     build_closing(story)
+    # image back-cover as the final page
+    story.append(NextPageTemplate("backcover"))
+    story.append(PageBreak())
+    story.append(Spacer(1, 1))
     return story
 
 
