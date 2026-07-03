@@ -201,9 +201,11 @@ def title_rule(c, cx, y, half_width=118):
     c.restoreState()
 
 
-def build_cover():
+def build_cover(show_byline=True, out_png=None, out_jpg=None):
     os.makedirs(BUILD, exist_ok=True)
-    c = pdfcanvas.Canvas(TMP_PDF, pagesize=(W, H))
+    tmp_pdf = TMP_PDF if out_png is None else os.path.join(os.path.dirname(out_png), "_cover_tmp.pdf")
+    os.makedirs(os.path.dirname(tmp_pdf), exist_ok=True)
+    c = pdfcanvas.Canvas(tmp_pdf, pagesize=(W, H))
 
     c.drawImage(os.path.join(ASSETS, "bg_cover_floral.png"), 0, 0, width=W, height=H)
 
@@ -245,9 +247,10 @@ def build_cover():
     c.drawCentredString(W / 2, title_y - 106, "How to Raise a Child Who")
     c.drawCentredString(W / 2, title_y - 127, "Changes the World")
 
-    c.setFont("Times-Italic", 13)
-    c.setFillColor(GOLD_DARK)
-    c.drawCentredString(W / 2, title_y - 156, "by Aiz-El Dan")
+    if show_byline:
+        c.setFont("Times-Italic", 13)
+        c.setFillColor(GOLD_DARK)
+        c.drawCentredString(W / 2, title_y - 156, "by Aiz-El Dan")
 
     # emotional tagline ribbon (single connected band, two lines)
     ribbon_y, ribbon_h = 84, 78
@@ -286,20 +289,24 @@ def build_cover():
 
     c.showPage()
     c.save()
-    print("wrote", TMP_PDF)
+    print("wrote", tmp_pdf)
+    return tmp_pdf
 
 
-def rasterize():
+def rasterize(tmp_pdf=None, out_png=None, out_jpg=None):
     import fitz
-    doc = fitz.open(TMP_PDF)
+    tmp_pdf = tmp_pdf or TMP_PDF
+    out_png = out_png or OUT_PNG
+    out_jpg = out_jpg or OUT_JPG
+    doc = fitz.open(tmp_pdf)
     page = doc[0]
     zoom = 1600 / W
     pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom))
-    pix.save(OUT_PNG)
+    pix.save(out_png)
     from PIL import Image
-    Image.open(OUT_PNG).convert("RGB").save(OUT_JPG, quality=92)
-    print("wrote", OUT_PNG)
-    print("wrote", OUT_JPG)
+    Image.open(out_png).convert("RGB").save(out_jpg, quality=92)
+    print("wrote", out_png)
+    print("wrote", out_jpg)
 
 
 if __name__ == "__main__":
