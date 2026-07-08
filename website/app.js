@@ -5,6 +5,52 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ================= PADDLE CHECKOUT CONFIG =================
+     Fill these two values in once your Paddle account is approved
+     (see PADDLE-SETUP.md in the repo root for the exact steps):
+       PADDLE_ENV:          "sandbox" while testing, "production" when live
+       PADDLE_CLIENT_TOKEN: Paddle dashboard > Developer tools > Authentication
+                            (starts with "test_" or "live_")
+       PADDLE_PRICE_ID:     Paddle dashboard > Catalog > your $14.99 price
+                            (starts with "pri_")                       */
+  var PADDLE_ENV = "sandbox";
+  var PADDLE_CLIENT_TOKEN = "";
+  var PADDLE_PRICE_ID = "";
+  /* =========================================================== */
+
+  var paddleReady = false;
+  if (window.Paddle && PADDLE_CLIENT_TOKEN && PADDLE_PRICE_ID) {
+    try {
+      if (PADDLE_ENV === "sandbox") window.Paddle.Environment.set("sandbox");
+      window.Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+      paddleReady = true;
+    } catch (e) { /* fall through to the not-ready fallback */ }
+  }
+
+  function openCheckout() {
+    if (paddleReady) {
+      window.Paddle.Checkout.open({
+        items: [{ priceId: PADDLE_PRICE_ID, quantity: 1 }],
+        settings: {
+          displayMode: "overlay",
+          successUrl: "https://the-mothers-code.vercel.app/thank-you.html"
+        }
+      });
+    } else {
+      // checkout not yet configured — take orders by email instead of failing silently
+      window.location.href =
+        "mailto:hello@themotherscode.com?subject=Order%20The%20Mother%27s%20Code" +
+        "&body=Hi%2C%20I%27d%20like%20to%20order%20the%20PDF%20edition%20(%2414.99).";
+    }
+  }
+
+  document.querySelectorAll(".js-buy").forEach(function (el) {
+    el.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      openCheckout();
+    });
+  });
+
   /* ---- nav background on scroll ---- */
   var nav = document.getElementById("nav");
   function onScrollNav() {
