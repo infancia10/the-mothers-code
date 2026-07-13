@@ -25,11 +25,7 @@ already in place:
 - [x] Refund Policy page (`/refunds.html` — 14-day money-back)
 - [x] Contact email visible in the footer
 - [x] Site live over HTTPS
-- [ ] **ACTION NEEDED:** the site shows `hello@the-mothers-code.com` as the
-      support email. That inbox doesn't exist yet — either create it (e.g.
-      register the domain, or use a free provider alias) or tell Claude to
-      replace it site-wide with an address you actually control. Paddle may
-      email it during review.
+- [x] Support email `contact@the-mothers-code.com` (live mailbox, shown in footer)
 
 ## 3. Create the product in Paddle
 
