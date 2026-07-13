@@ -15,7 +15,7 @@
                             (starts with "pri_")                       */
   var PADDLE_ENV = "sandbox";
   var PADDLE_CLIENT_TOKEN = "";
-  var PADDLE_PRICE_ID = "";
+  var PADDLE_PRICE_ID = "pri_01kxdcfq1eppngwvzvz68fesvq";
   /* =========================================================== */
 
   var paddleReady = false;
