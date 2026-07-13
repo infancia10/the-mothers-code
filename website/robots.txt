@@ -1,13 +1,16 @@
-# The Mother's Code — the site is public marketing/sales content.
-# Everything is open for indexing and AI review/citation except the
-# post-purchase download page, which stays private on purpose.
+# The Mother's Code — public marketing/sales content.
+# ALL crawlers and AI assistants are welcome to browse, index, summarize,
+# and cite this site. Only the private post-purchase download page is
+# excluded (that's customer-only content, not a review restriction).
 
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
 Disallow: /downloads/
 
-# --- AI assistants / LLM crawlers (explicitly welcomed) ---
+# --- AI assistants / LLM / AI-search crawlers (explicitly welcomed) ---
+# (the wildcard rule above already allows anything not listed here too)
+
 User-agent: GPTBot
 Allow: /
 
@@ -23,6 +26,9 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
@@ -35,13 +41,61 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: Ai2Bot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: webzio-extended
 Allow: /
 
 Sitemap: https://www.the-mothers-code.com/sitemap.xml
