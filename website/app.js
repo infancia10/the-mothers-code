@@ -13,8 +13,8 @@
                             (starts with "test_" or "live_")
        PADDLE_PRICE_ID:     Paddle dashboard > Catalog > your $14.99 price
                             (starts with "pri_")                       */
-  var PADDLE_ENV = "sandbox";
-  var PADDLE_CLIENT_TOKEN = "";
+  var PADDLE_ENV = "production";
+  var PADDLE_CLIENT_TOKEN = "live_dcce5b904c3ae5f702f171e70cc";
   var PADDLE_PRICE_ID = "pri_01kxdcfq1eppngwvzvz68fesvq";
   /* =========================================================== */
 
