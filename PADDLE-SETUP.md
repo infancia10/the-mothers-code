@@ -16,7 +16,7 @@ dead-ends a customer).
 ## 2. Website verification (already prepared for you)
 
 Paddle reviews your website before approving a live account. Submit
-`https://the-mothers-code.vercel.app` — the checklist items they look for are
+`https://www.the-mothers-code.com` — the checklist items they look for are
 already in place:
 
 - [x] Product clearly described with pricing ($14.99, PDF edition)
@@ -25,7 +25,7 @@ already in place:
 - [x] Refund Policy page (`/refunds.html` — 14-day money-back)
 - [x] Contact email visible in the footer
 - [x] Site live over HTTPS
-- [ ] **ACTION NEEDED:** the site shows `hello@themotherscode.com` as the
+- [ ] **ACTION NEEDED:** the site shows `hello@the-mothers-code.com` as the
       support email. That inbox doesn't exist yet — either create it (e.g.
       register the domain, or use a free provider alias) or tell Claude to
       replace it site-wide with an address you actually control. Paddle may
@@ -62,7 +62,8 @@ download.
 ## 6. Approve the domain for checkout
 
 Dashboard → **Checkout → Website approval**: add
-`the-mothers-code.vercel.app`. Paddle only opens checkout on approved domains.
+`the-mothers-code.com`. Paddle only opens checkout on approved domains
+(approval covers www too). ✅ DONE — approved 13 July 2026.
 
 ## 7. Test before going live
 

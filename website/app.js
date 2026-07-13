@@ -33,13 +33,13 @@
         items: [{ priceId: PADDLE_PRICE_ID, quantity: 1 }],
         settings: {
           displayMode: "overlay",
-          successUrl: "https://the-mothers-code.vercel.app/thank-you.html"
+          successUrl: "https://www.the-mothers-code.com/thank-you.html"
         }
       });
     } else {
       // checkout not yet configured — take orders by email instead of failing silently
       window.location.href =
-        "mailto:hello@themotherscode.com?subject=Order%20The%20Mother%27s%20Code" +
+        "mailto:hello@the-mothers-code.com?subject=Order%20The%20Mother%27s%20Code" +
         "&body=Hi%2C%20I%27d%20like%20to%20order%20the%20PDF%20edition%20(%2414.99).";
     }
   }
