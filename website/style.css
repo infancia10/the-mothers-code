@@ -298,10 +298,19 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 720px) {
   .hero-inner { grid-template-columns: 1.05fr 0.95fr; gap: 40px; }
   .about-inner { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  /* tablet: 5 cards as a centered 3 + 2 layout (no orphan card) */
+  .cards { grid-template-columns: repeat(6, 1fr); }
+  .card { grid-column: span 2; }
+  .card:nth-child(4) { grid-column: 2 / span 2; }
+  .card:nth-child(5) { grid-column: 4 / span 2; }
+}
+@media (min-width: 720px) and (max-width: 999px) {
+  /* keep the huge hero type proportional to the narrower column */
+  .hero-title { font-size: clamp(2.9rem, 8.5vw, 5.4rem); }
 }
 @media (min-width: 1000px) {
   .cards { grid-template-columns: repeat(5, 1fr); }
+  .card, .card:nth-child(4), .card:nth-child(5) { grid-column: auto; }
 }
 
 @media (max-width: 719px) {
