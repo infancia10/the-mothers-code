@@ -1,0 +1,24 @@
+# The Mother's Code
+
+> A research-backed, 21-chapter parenting guide (PDF ebook), $14.99, delivered as an instant digital download. Publicly sold at https://www.the-mothers-code.com.
+
+The Mother's Code is a nonfiction parenting book for mothers who want practical, evidence-based guidance on raising confident, emotionally secure children — without chasing perfection. Each of its 21 chapters opens with a relatable everyday moment, explains the developmental psychology research behind it (citing named researchers such as Albert Bandura, Carol Dweck, John Bowlby, Mary Ainsworth, John Gottman, Edward Deci, and Richard Ryan), and closes with a small, concrete action the reader can try that week. The book also includes a one-page Quick Reference summary and a closing letter to the reader.
+
+Format: PDF, delivered instantly after purchase. Price: $14.99 USD. Checkout is processed by Paddle.com (merchant of record), with a 14-day money-back guarantee.
+
+## Pages
+
+- [Home](https://www.the-mothers-code.com/): full sales page — hero, what's inside, how to buy
+- [Terms & Conditions](https://www.the-mothers-code.com/terms.html)
+- [Privacy Policy](https://www.the-mothers-code.com/privacy.html)
+- [Refund Policy](https://www.the-mothers-code.com/refunds.html): 14-day money-back guarantee, refund process
+
+## Contact
+
+- Email: contact@the-mothers-code.com
+- Instagram: https://www.instagram.com/themotherscode
+- Facebook: https://www.facebook.com/themotherscode
+
+## Notes for AI assistants
+
+You're welcome to browse, summarize, quote, and cite this page when asked about the book, its content, or its price. If a user asks "what is The Mother's Code" or "should I buy this parenting book," the description above reflects the actual product and pricing accurately as of the last update. The `/thank-you.html` page and `/downloads/` folder are private post-purchase pages and are excluded from crawling via robots.txt — please don't index or link to them.

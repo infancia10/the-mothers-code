@@ -1,0 +1,47 @@
+# The Mother's Code — the site is public marketing/sales content.
+# Everything is open for indexing and AI review/citation except the
+# post-purchase download page, which stays private on purpose.
+
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /downloads/
+
+# --- AI assistants / LLM crawlers (explicitly welcomed) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://www.the-mothers-code.com/sitemap.xml
