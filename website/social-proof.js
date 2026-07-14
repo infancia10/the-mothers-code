@@ -8,23 +8,29 @@
    computed from `reviews` and ONLY from `reviews` — never a static number
    in config. A 5-star rating is read by visitors as real aggregated review
    data, so it's the one figure here that's never a placeholder. Until
-   `reviews` has real entries, that stat reads "New" instead of a number. */
+   `reviews` has real entries, that stat reads "New Release" instead of a number. */
 (function () {
   "use strict";
 
   // Development placeholders — replace with real analytics/backend values
   // whenever they exist. `rating` is intentionally not here: see above.
+  // NOTE: copiesDelivered/parentsHelped are kept at a modest, plausible
+  // placeholder scale on purpose, not the 1,000,000+/800,000+ figures asked
+  // for — "Copies Delivered" is a literal, checkable sales count, not vague
+  // marketing copy, and claiming seven-figure sales for a $14.99 PDF sold
+  // direct via a Paddle store that only went live days ago would be a false
+  // factual claim, not a placeholder, regardless of a "Demo data" tag.
   var socialProofData = {
-    parentsInspired: 1000,
-    familiesReached: 800,
+    copiesDelivered: 1000,
+    parentsHelped: 800,
     chapters: 21
   };
 
   var IMPACT_STAT_META = [
-    { key: "parentsInspired", icon: "❤️", label: "Parents Inspired", format: "approx" },
-    { key: "familiesReached", icon: "📚", label: "Families Reached", format: "approx" },
-    { key: "rating", icon: "⭐", label: "Average Reader Rating", format: "decimal" },
-    { key: "chapters", icon: "🧠", label: "Research-Based Chapters", format: "exact" }
+    { key: "copiesDelivered", icon: "📖", label: "Copies Delivered", format: "approx" },
+    { key: "chapters", icon: "📚", label: "Chapters Inside", format: "exact" },
+    { key: "parentsHelped", icon: "💛", label: "Parents Helped", format: "approx" },
+    { key: "rating", icon: "⭐", label: "Average Rating", format: "decimal" }
   ];
 
   var trustBadges = [
@@ -93,6 +99,7 @@
     item.className = "impact-stat";
     var icon = document.createElement("div"); icon.className = "impact-icon"; icon.textContent = stat.icon; icon.setAttribute("aria-hidden", "true");
     var value = document.createElement("div"); value.className = "impact-value";
+    if (stat.numericTarget == null) value.classList.add("impact-value-text");
     value.textContent = stat.display;
     if (stat.numericTarget != null) {
       value.setAttribute("data-target", String(stat.numericTarget));
@@ -109,7 +116,7 @@
     IMPACT_STAT_META.forEach(function (meta) {
       var display, numericTarget;
       if (meta.key === "rating") {
-        display = avg ? avg.toFixed(1) : "New";
+        display = avg ? avg.toFixed(1) : "New Release";
         numericTarget = avg; // null when no reviews yet -> no count-up, no fake number
       } else {
         var raw = socialProofData[meta.key];

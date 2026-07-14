@@ -288,6 +288,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   color: var(--purple);
 }
+.impact-value-text { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.15; }
 .impact-label {
   margin-top: 12px;
   font-size: 0.9rem;
