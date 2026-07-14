@@ -154,6 +154,9 @@
           <div class="book-side"></div>
         </div>
         <div class="book-shadow"></div>
+        <button type="button" class="book-like" id="bookLike" aria-pressed="false" aria-label="Save The Mother's Code to your favourites">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 4 6.5 4c2 0 3.5 1.2 4.5 2.7C12 5.2 13.5 4 15.5 4 19 4 21.5 7.5 21.5 12c-2.5 4.65-9.5 9-9.5 9Z"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -178,6 +181,83 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h6M9 18h.01"/></svg>
       <span>Read on any device</span>
     </div>
+  </div>
+</section>
+
+<!-- ================= SOCIAL PROOF ================= -->
+<section class="social-proof" id="loved">
+  <div class="wrap">
+    <div class="sp-banner reveal">
+      <span class="sp-banner-icon" aria-hidden="true">📖</span>
+      A calmer, more confident way to parent — grounded in real research
+    </div>
+
+    <div class="sp-stats" id="spStats" aria-label="Book statistics"></div>
+
+    <div class="sp-badges reveal">
+      <span class="sp-badge" id="spFavBadge">
+        <span class="sp-badge-icon" aria-hidden="true">🤍</span>
+        <span class="sp-badge-text">Add it to your favourites</span>
+      </span>
+      <span class="sp-badge" id="spViewedBadge">
+        <span class="sp-badge-icon" aria-hidden="true">👀</span>
+        <span class="sp-badge-text"></span>
+      </span>
+      <span class="sp-badge" id="spRecommendBadge" hidden>
+        <span class="sp-badge-icon" aria-hidden="true">⭐</span>
+        <span class="sp-badge-text"></span>
+      </span>
+    </div>
+
+    <div class="sp-row reveal">
+      <div class="sp-group">
+        <div class="sp-group-label">Perfect for</div>
+        <div class="sp-chips">
+          <span class="sp-chip">Expecting Parents</span>
+          <span class="sp-chip">New Parents</span>
+          <span class="sp-chip">Parents of Young Children</span>
+        </div>
+      </div>
+      <div class="sp-group">
+        <div class="sp-group-label">Popular topics inside</div>
+        <div class="sp-chips">
+          <span class="sp-chip">Stronger Bonds</span>
+          <span class="sp-chip">Emotional Growth</span>
+          <span class="sp-chip">Values That Last</span>
+          <span class="sp-chip">Real-Life Strategies</span>
+          <span class="sp-chip">Grow With Grace</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-editorial reveal">
+      <div class="sp-editorial-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m8.5 12 2.5 2.5L16 9" /></svg>
+        <div>
+          <div class="sp-editorial-title">Evidence-Based Resource</div>
+          <div class="sp-editorial-sub">The Mother's Code editorial standard</div>
+        </div>
+      </div>
+      <div class="sp-trust-list">
+        <span>Evidence-Based</span>
+        <span>Research-Informed</span>
+        <span>Practical Parenting</span>
+        <span>Modern Families</span>
+        <span>Science-Backed Guidance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS (hidden until real reviews exist — see social-proof.js) ================= -->
+<section class="reviews" id="reviews" hidden>
+  <div class="wrap">
+    <div class="inside-head reveal">
+      <div class="section-eyebrow center">Reader Reviews</div>
+      <h2 class="section-title center">What parents are saying</h2>
+    </div>
+    <div class="rating-summary" id="ratingSummary"></div>
+    <div class="review-list" id="reviewList"></div>
   </div>
 </section>
 
@@ -327,6 +407,7 @@
 </footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="social-proof.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
