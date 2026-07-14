@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="canonical" href="https://www.the-mothers-code.com/" />
+<link rel="preload" as="image" href="assets/cover.jpg" fetchpriority="high" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="The Mother's Code — Everyday Parenting Wisdom" />
 <meta property="og:description" content="A research-backed, 21-chapter parenting guide. Instant PDF download." />
@@ -27,6 +28,7 @@
   "description": "Everyday parenting wisdom for raising a child who changes the world. A research-backed, 21-chapter guide delivered as an instant PDF download.",
   "image": "https://www.the-mothers-code.com/assets/og-cover.jpg",
   "category": "Parenting / Family",
+  "brand": { "@type": "Organization", "name": "The Mother's Code" },
   "offers": {
     "@type": "Offer",
     "price": "14.99",
@@ -36,6 +38,67 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Mother's Code",
+  "url": "https://www.the-mothers-code.com/",
+  "logo": "https://www.the-mothers-code.com/assets/favicon.png",
+  "sameAs": [
+    "https://www.instagram.com/themotherscode",
+    "https://www.facebook.com/themotherscode"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What format is the book in, and how do I get it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Mother's Code is delivered as an instant PDF download. As soon as checkout is complete you're taken to a download page — no shipping, no waiting, and it's yours to keep on any phone, tablet, or computer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's actually inside the book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "21 short, practical chapters covering bonding, emotional development, sleep, feeding, values, and everyday parenting moments — plus a Quick Reference summary you can return to anytime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it actually research-backed, or just opinions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every chapter is grounded in real developmental psychology — drawing on researchers like Bandura, Dweck, Bowlby, Gottman, and Deci — translated into plain language you can use the same day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is checkout secure, and do I need to create an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Checkout is handled by Paddle, our secure merchant of record, in an encrypted overlay on this page. No account or password is required — just your email for the receipt and download link."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the book isn't right for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You're covered by a 14-day money-back guarantee. Full details are on our Refund Policy page."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -43,27 +106,31 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <svg viewBox="0 0 24 24" class="brand-mark"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10Z"/><path d="M12 8v9"/><path d="M8.2 11c1.3 1 2.4 1.8 3.8 1.8s2.5-.8 3.8-1.8"/></svg>
+      <svg viewBox="0 0 24 24" class="brand-mark" aria-hidden="true"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10Z"/><path d="M12 8v9"/><path d="M8.2 11c1.3 1 2.4 1.8 3.8 1.8s2.5-.8 3.8-1.8"/></svg>
       <span>The Mother's Code</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#inside">Inside</a>
+      <a href="#faq">FAQ</a>
       <a href="#buy" class="nav-cta">Get Your Copy</a>
     </nav>
   </div>
 </header>
 
+<main id="main">
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
-  <div class="hero-bg" data-parallax></div>
-  <div class="hero-particles" id="particles"></div>
-  <img class="floral floral-tr" src="assets/floral-top-right.png" alt="" aria-hidden="true" />
-  <img class="floral floral-bl" src="assets/floral-bottom-left.png" alt="" aria-hidden="true" />
+  <div class="hero-bg" data-parallax aria-hidden="true"></div>
+  <div class="hero-particles" id="particles" aria-hidden="true"></div>
+  <img class="floral floral-tr" src="assets/floral-top-right.png" alt="" aria-hidden="true" width="480" height="394" />
+  <img class="floral floral-bl" src="assets/floral-bottom-left.png" alt="" aria-hidden="true" width="420" height="252" />
 
   <div class="wrap hero-inner">
     <div class="hero-copy reveal">
@@ -82,12 +149,34 @@
         <div class="book-glow"></div>
         <div class="book">
           <div class="book-cover">
-            <img src="assets/cover.jpg" alt="The Mother's Code — book cover" />
+            <img src="assets/cover.jpg" alt="The Mother's Code — book cover" width="900" height="1525" fetchpriority="high" decoding="async" />
           </div>
           <div class="book-side"></div>
         </div>
         <div class="book-shadow"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<section class="trust-bar reveal" aria-label="Why readers trust this book">
+  <div class="wrap trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/></svg>
+      <span>Research-backed, not opinion</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
+      <span>Instant PDF delivery</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>
+      <span>Secure checkout via Paddle</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h6M9 18h.01"/></svg>
+      <span>Read on any device</span>
     </div>
   </div>
 </section>
@@ -130,27 +219,27 @@
     </div>
     <div class="cards">
       <article class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 4 6.5 4c2 0 3.5 1.2 4.5 2.7C12 5.2 13.5 4 15.5 4 19 4 21.5 7.5 21.5 12c-2.5 4.65-9.5 9-9.5 9Z"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 4 6.5 4c2 0 3.5 1.2 4.5 2.7C12 5.2 13.5 4 15.5 4 19 4 21.5 7.5 21.5 12c-2.5 4.65-9.5 9-9.5 9Z"/></svg></div>
         <h3>Stronger Bonds</h3>
         <p>Build deeper connection through small, ordinary daily moments.</p>
       </article>
       <article class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-3 3-7 6-7 11a7 7 0 0 0 14 0c0-5-4-8-7-11Z"/><path d="M12 21v-7"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 3-7 6-7 11a7 7 0 0 0 14 0c0-5-4-8-7-11Z"/><path d="M12 21v-7"/></svg></div>
         <h3>Emotional Growth</h3>
         <p>Help your child name feelings and build real resilience.</p>
       </article>
       <article class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2Z"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7L2 9.2l7.1-.6L12 2Z"/></svg></div>
         <h3>Values That Last</h3>
         <p>Instill confidence, empathy, and a durable sense of purpose.</p>
       </article>
       <article class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m8.5 15 2 2 4-4"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m8.5 15 2 2 4-4"/></svg></div>
         <h3>Real-Life Strategies</h3>
         <p>Simple, research-backed things you can try this week.</p>
       </article>
       <article class="card reveal">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8Z"/><path d="M5 21h14"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8Z"/><path d="M5 21h14"/></svg></div>
         <h3>Grow With Grace</h3>
         <p>Care for yourself with the same patience you give your child.</p>
       </article>
@@ -166,9 +255,41 @@
   </div>
 </section>
 
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="inside-head reveal">
+      <div class="section-eyebrow center">Questions</div>
+      <h2 class="section-title center">Before you begin</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>What format is the book in, and how do I get it?</summary>
+        <p>The Mother's Code is delivered as an instant PDF download. As soon as checkout is complete you're taken to a download page — no shipping, no waiting, and it's yours to keep on any phone, tablet, or computer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's actually inside the book?</summary>
+        <p>21 short, practical chapters covering bonding, emotional development, sleep, feeding, values, and everyday parenting moments — plus a Quick Reference summary you can return to anytime.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is it actually research-backed, or just opinions?</summary>
+        <p>Every chapter is grounded in real developmental psychology — drawing on researchers like Bandura, Dweck, Bowlby, Gottman, and Deci — translated into plain language you can use the same day.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is checkout secure, and do I need to create an account?</summary>
+        <p>Checkout is handled by Paddle, our secure merchant of record, in an encrypted overlay on this page. No account or password is required — just your email for the receipt and download link.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if the book isn't right for me?</summary>
+        <p>You're covered by a 14-day money-back guarantee. Full details are on our <a href="refunds.html">Refund Policy</a> page.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FINAL CTA ================= -->
 <section class="final-cta" id="buy">
-  <div class="cta-particles" id="ctaParticles"></div>
+  <div class="cta-particles" id="ctaParticles" aria-hidden="true"></div>
   <div class="wrap final-inner reveal">
     <div class="section-eyebrow center light">The Mother's Code · PDF Edition</div>
     <h2 class="final-title">Start your journey today</h2>
@@ -178,12 +299,19 @@
     <div class="final-guarantee">Secure checkout via Paddle · Instant PDF download</div>
   </div>
 </section>
+</main>
+
+<!-- ================= STICKY BUY ================= -->
+<a href="#buy" class="sticky-buy js-buy" id="stickyBuy" aria-hidden="true" tabindex="-1">
+  <span class="sticky-buy-label">Get Your Copy</span>
+  <span class="sticky-buy-price">$14.99</span>
+</a>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <svg viewBox="0 0 24 24" class="brand-mark"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10Z"/></svg>
+      <svg viewBox="0 0 24 24" class="brand-mark" aria-hidden="true"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10Z"/></svg>
       The Mother's Code
     </div>
     <div class="footer-copy">
@@ -191,9 +319,9 @@
       <a href="terms.html">Terms &amp; Conditions</a> · <a href="privacy.html">Privacy Policy</a> · <a href="refunds.html">Refund Policy</a> · <a href="mailto:contact@the-mothers-code.com">contact@the-mothers-code.com</a>
     </div>
     <div class="footer-social">
-      <a href="https://www.instagram.com/themotherscode" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a href="https://www.facebook.com/themotherscode" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8Z"/></svg></a>
-      <a href="mailto:contact@the-mothers-code.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      <a href="https://www.instagram.com/themotherscode" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      <a href="https://www.facebook.com/themotherscode" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8Z"/></svg></a>
+      <a href="mailto:contact@the-mothers-code.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
     </div>
   </div>
 </footer>

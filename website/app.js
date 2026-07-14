@@ -102,6 +102,32 @@
     }, { passive: true });
   }
 
+  /* ---- sticky buy button ----
+     Appears once the visitor scrolls past the hero's own CTA, hides while
+     the final #buy section (which already has a CTA) is in view.
+     Rect-based like the reveal system above, not IntersectionObserver —
+     some embedded webviews don't fire IO reliably here. */
+  var stickyBuy = document.getElementById("stickyBuy");
+  var heroSection = document.getElementById("top");
+  var buySection = document.getElementById("buy");
+  if (stickyBuy && heroSection && buySection) {
+    var setStickyVisible = function (visible) {
+      stickyBuy.classList.toggle("is-visible", visible);
+      stickyBuy.setAttribute("aria-hidden", visible ? "false" : "true");
+      stickyBuy.tabIndex = visible ? 0 : -1;
+    };
+    var updateSticky = function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var pastHero = heroSection.getBoundingClientRect().bottom < 0;
+      var buyRect = buySection.getBoundingClientRect();
+      var buyInView = buyRect.top < vh && buyRect.bottom > 0;
+      setStickyVisible(pastHero && !buyInView);
+    };
+    updateSticky();
+    window.addEventListener("scroll", updateSticky, { passive: true });
+    window.addEventListener("resize", updateSticky, { passive: true });
+  }
+
   /* ---- floating gold particles ---- */
   function seedParticles(container, count) {
     if (!container || reduce) return;
