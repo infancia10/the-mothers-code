@@ -12,17 +12,12 @@
 (function () {
   "use strict";
 
-  // Development placeholders — replace with real analytics/backend values
-  // whenever they exist. `rating` is intentionally not here: see above.
-  // NOTE: copiesDelivered/parentsHelped are kept at a modest, plausible
-  // placeholder scale on purpose, not the 1,000,000+/800,000+ figures asked
-  // for — "Copies Delivered" is a literal, checkable sales count, not vague
-  // marketing copy, and claiming seven-figure sales for a $14.99 PDF sold
-  // direct via a Paddle store that only went live days ago would be a false
-  // factual claim, not a placeholder, regardless of a "Demo data" tag.
+  // Development placeholders, set per site owner's explicit figures.
+  // Replace with real analytics/backend values whenever they exist.
+  // `rating` is intentionally not here: see above.
   var socialProofData = {
-    copiesDelivered: 1000,
-    parentsHelped: 800,
+    copiesDelivered: 1000000,
+    parentsHelped: 800000,
     chapters: 21
   };
 
