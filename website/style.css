@@ -274,9 +274,9 @@ a { color: inherit; text-decoration: none; }
 /* large impact stats — editorial/magazine style, not dashboard cards */
 .impact-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 24px;
-  max-width: 960px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 16px;
+  max-width: 780px;
   margin: 0 auto 68px;
 }
 .impact-stat { text-align: center; position: relative; }
@@ -297,7 +297,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
 }
 @media (min-width: 720px) {
-  .impact-stats { grid-template-columns: repeat(4, 1fr); }
+  .impact-stats { gap: 40px 24px; }
   .impact-stat:not(:last-child)::after {
     content: "";
     position: absolute;

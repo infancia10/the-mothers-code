@@ -6,9 +6,9 @@
    Honesty rule that stays non-negotiable regardless of what else changes:
    average rating, the star breakdown, and the whole Reviews section are
    computed from `reviews` and ONLY from `reviews` — never a static number
-   in config. A 5-star rating is read by visitors as real aggregated review
-   data, so it's the one figure here that's never a placeholder. Until
-   `reviews` has real entries, that stat reads "New Release" instead of a number. */
+   in config, real or placeholder. A star rating is read by visitors as
+   real aggregated review data, so it doesn't appear anywhere on the page
+   (including the impact-stats row) until `reviews` has real entries. */
 (function () {
   "use strict";
 
@@ -21,11 +21,14 @@
     chapters: 21
   };
 
+  // Average rating is deliberately not one of these tiles — it lives only
+  // in the Reviews section below, which stays hidden until `reviews` has
+  // real entries. A star rating reads as aggregated real customer feedback,
+  // so it's never shown as a number (real or placeholder) until it is one.
   var IMPACT_STAT_META = [
     { key: "copiesDelivered", icon: "📖", label: "Copies Delivered", format: "approx" },
     { key: "chapters", icon: "📚", label: "Chapters Inside", format: "exact" },
-    { key: "parentsHelped", icon: "💛", label: "Parents Helped", format: "approx" },
-    { key: "rating", icon: "⭐", label: "Average Rating", format: "decimal" }
+    { key: "parentsHelped", icon: "💛", label: "Parents Helped", format: "approx" }
   ];
 
   var trustBadges = [
@@ -107,20 +110,12 @@
 
   var impactEl = document.getElementById("impactStats");
   if (impactEl) {
-    var avg = computeAverageRating(reviews);
     IMPACT_STAT_META.forEach(function (meta) {
-      var display, numericTarget;
-      if (meta.key === "rating") {
-        display = avg ? avg.toFixed(1) : "New Release";
-        numericTarget = avg; // null when no reviews yet -> no count-up, no fake number
-      } else {
-        var raw = socialProofData[meta.key];
-        display = meta.format === "exact" ? String(raw) : formatApproxCount(raw);
-        numericTarget = raw;
-      }
+      var raw = socialProofData[meta.key];
+      var display = meta.format === "exact" ? String(raw) : formatApproxCount(raw);
       impactEl.appendChild(buildImpactStat({
         icon: meta.icon, label: meta.label, display: display,
-        numericTarget: numericTarget, format: meta.format
+        numericTarget: raw, format: meta.format
       }));
     });
   }
