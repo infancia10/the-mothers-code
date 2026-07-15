@@ -85,7 +85,7 @@ a { color: inherit; text-decoration: none; }
   will-change: transform;
 }
 .btn-gold {
-  color: #fff;
+  color: var(--ink);
   background: linear-gradient(135deg, #E3C578 0%, var(--gold) 45%, var(--gold-deep) 100%);
   box-shadow: 0 12px 30px -10px rgba(165,130,47,0.6);
 }
@@ -505,7 +505,7 @@ button.engagement-pill:hover { transform: translateY(-2px); }
   padding: 14px 24px;
   border-radius: 40px;
   background: linear-gradient(135deg, #E3C578 0%, var(--gold) 45%, var(--gold-deep) 100%);
-  color: #fff;
+  color: var(--ink);
   box-shadow: 0 16px 34px -12px rgba(165,130,47,0.55);
   font-size: 0.92rem;
   font-weight: 500;
@@ -516,7 +516,7 @@ button.engagement-pill:hover { transform: translateY(-2px); }
 }
 .sticky-buy.is-visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .sticky-buy:hover { filter: brightness(1.05); }
-.sticky-buy-price { padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.5); opacity: 0.9; }
+.sticky-buy-price { padding-left: 12px; border-left: 1px solid rgba(67,48,58,0.3); }
 @media (max-width: 480px) {
   .sticky-buy { right: 16px; bottom: 16px; padding: 12px 18px; font-size: 0.86rem; }
 }
@@ -532,7 +532,7 @@ button.engagement-pill:hover { transform: translateY(-2px); }
 .footer-copy { font-size: 0.82rem; color: var(--ink-soft); }
 .footer-social { display: flex; gap: 12px; }
 .footer-social a {
-  width: 36px; height: 36px; border-radius: 50%;
+  width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--gold);
   display: flex; align-items: center; justify-content: center;
   transition: background .3s var(--ease), transform .3s var(--ease);
