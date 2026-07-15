@@ -6,16 +6,19 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ================= PADDLE CHECKOUT CONFIG =================
-     Fill these two values in once your Paddle account is approved
-     (see PADDLE-SETUP.md in the repo root for the exact steps):
-       PADDLE_ENV:          "sandbox" while testing, "production" when live
-       PADDLE_CLIENT_TOKEN: Paddle dashboard > Developer tools > Authentication
-                            (starts with "test_" or "live_")
-       PADDLE_PRICE_ID:     Paddle dashboard > Catalog > your $14.99 price
-                            (starts with "pri_")                       */
-  var PADDLE_ENV = "production";
-  var PADDLE_CLIENT_TOKEN = "live_dcce5b904c3ae5f702f171e70cc";
-  var PADDLE_PRICE_ID = "pri_01kxdcfq1eppngwvzvz68fesvq";
+     Production is always the default so this can never accidentally ship
+     sandbox credentials live. Append ?paddle_test=1 to the URL to opt into
+     sandbox mode for manual testing (e.g. on a staging preview deploy) —
+     never flip PRODUCTION defaults below to sandbox values directly.    */
+  var USE_SANDBOX = /[?&]paddle_test=1(&|$)/.test(window.location.search);
+
+  var PADDLE_ENV = USE_SANDBOX ? "sandbox" : "production";
+  var PADDLE_CLIENT_TOKEN = USE_SANDBOX
+    ? "test_4a93e21107691b36c821cd04e19"
+    : "live_dcce5b904c3ae5f702f171e70cc";
+  var PADDLE_PRICE_ID = USE_SANDBOX
+    ? "pri_01kxj12733fxd2qmrhaxvfmyv0"
+    : "pri_01kxdcfq1eppngwvzvz68fesvq";
   /* =========================================================== */
 
   var paddleReady = false;
